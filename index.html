@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Знайдіть українські слова, що містять усі введені літери — у будь-якому порядку.">
+  <title>Словолітера — пошук слів за літерами</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Словолітера — на головну">
+      <span class="brand-mark">СЛ</span>
+      <span>Словолітера</span>
+    </a>
+    <a class="about-link" href="#about">Про словник <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow"><span></span> українські слова</div>
+      <h1 id="hero-title">Літери є.<br><em>Слово знайдеться.</em></h1>
+      <p class="intro">Введіть кілька літер — ми знайдемо слова, де вони трапляються в будь-якому місці й порядку.</p>
+
+      <form class="search-card" id="searchForm">
+        <label for="letters">Які літери шукаємо?</label>
+        <div class="input-row">
+          <input id="letters" name="letters" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="Наприклад: к, р, а" maxlength="24" autofocus>
+          <button type="submit">Знайти <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="search-meta">
+          <p id="hint">Порядок не має значення: «кра» знайде «калина», «аркуш», «краса».</p>
+          <button class="clear-button" id="clearButton" type="button" hidden>Очистити</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="results-section" id="resultsSection" aria-live="polite" hidden>
+      <div class="results-head">
+        <div>
+          <p class="section-kicker">результати</p>
+          <h2 id="resultsTitle">Знайдені слова</h2>
+        </div>
+        <div class="count" id="resultCount"></div>
+      </div>
+      <div class="word-grid" id="wordGrid"></div>
+      <button class="more-button" id="moreButton" type="button" hidden>Показати ще <span>↓</span></button>
+      <div class="empty" id="emptyState" hidden>
+        <span>∅</span>
+        <h3>Таких слів не знайшлося</h3>
+        <p>Спробуйте прибрати одну літеру або перевірте написання.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <p class="section-kicker">як це працює</p>
+      <div class="about-grid">
+        <h2>Не шукаємо фразу.<br>Шукаємо кожну літеру.</h2>
+        <div class="steps">
+          <div><span>01</span><p>Вводите літери разом, через пробіл або кому.</p></div>
+          <div><span>02</span><p>Кожна літера має бути у слові. Повтори теж враховуються.</p></div>
+          <div><span>03</span><p>Отримуєте коротші слова першими — так зручніше переглядати.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">СЛ</span><span>Словолітера</span></div>
+    <p>235 тисяч українських лем</p>
+    <p>Словникова база: <a href="https://github.com/brown-uk/dict_uk" target="_blank" rel="noreferrer">ВЕСУМ ↗</a></p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
